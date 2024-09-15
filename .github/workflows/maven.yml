@@ -25,7 +25,4 @@ jobs:
       env:
         USERNAME: ${{ secrets.MAVEN_USERNAME }}
         PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
-      with: 
-        server-id: github
-        settings-path: ${{ github.workspace }}
 
