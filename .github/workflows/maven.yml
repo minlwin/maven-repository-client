@@ -26,6 +26,9 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Test with Maven
+      env: 
+        USERNAME: ${{ secrets.MAVEN_USERNAME }}
+        PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
       run: |
-        echo ${{ env.GITHUB_TOKEN }} 
+        echo "name=$env.USERNAME" >> "$GITHUB_OUTPUT"
         mvn clean test -f pom.xml -s $GITHUB_WORKSPACE/settings.xml
