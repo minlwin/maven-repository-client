@@ -20,9 +20,9 @@ jobs:
         distribution: 'temurin'
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
-        
+
     - name: Build with Maven
-      run: mvn clean install -f pom.xml -s -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn clean install -f pom.xml -s $GITHUB_WORKSPACE/settings.xml
       env:
         USERNAME: ${{ secrets.MAVEN_USERNAME }}
         PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
