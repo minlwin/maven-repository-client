@@ -16,7 +16,7 @@
           <url>https://repo1.maven.org/maven2</url>
         </repository>
         <repository>
-          <id>github</id>
+          <id>minlwin</id>
           <url>https://maven.pkg.github.com/minlwin/maven-repository</url>
           <snapshots>
             <enabled>true</enabled>
@@ -28,7 +28,7 @@
 
   <servers>
     <server>
-      <id>github</id>
+      <id>minlwin</id>
       <username>${env.USERNAME}</username>
       <password>${env.PASSWORD}</password>
     </server>
