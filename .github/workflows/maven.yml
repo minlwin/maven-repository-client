@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check Out GitHub Repository
+    - name: Check Out GitHub
       uses: actions/checkout@v4
     
     - name: Set up JDK 21
@@ -19,11 +19,13 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
-        server-id: github
-        settings-path: ${{ github.workspace }}
 
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -B package --file pom.xml -s $GITHUB_WORKSPACE/settings.xml
       env:
         USERNAME: ${{ secrets.MAVEN_USERNAME }}
         PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
+      with: 
+        server-id: github
+        settings-path: ${{ github.workspace }}
+
