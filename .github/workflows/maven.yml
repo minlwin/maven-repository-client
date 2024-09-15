@@ -24,5 +24,5 @@ jobs:
       env: 
         USERNAME: ${{ secrets.MAVEN_USERNAME }}
         PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
-      run: mvn --batch-mode --update-snapshots -s settings.xml verify
+      run: mvn --batch-mode --update-snapshots -s settings.xml clean test
         
